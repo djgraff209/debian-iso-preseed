@@ -14,7 +14,7 @@ basename=$(echo ${iso_dir_name} | sed "s/\.iso//")
 [ -d "${basename}" ] && { echo "ERROR: ${basename} directory already exists."; exit 1; }
 
 # dependency
-which bsdtar > /dev/null || sudo aptitude install bsdtar
+which bsdtar > /dev/null || sudo apt-get install -y bsdtar
 
 mkdir ${basename}
 bsdtar -C ${basename} -xf ${isopath} || exit
